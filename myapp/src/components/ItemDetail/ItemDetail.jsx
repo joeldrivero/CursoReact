@@ -3,14 +3,14 @@ import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ data }) => {
-  const onAdd =(quantity)=>{
-    alert(`Compraste ${quantity} unidades`)}
+  const onAdd =(cant)=>{
+    alert(`Agregaste ${cant} unidades`)}
   return (
     <>
       <div className="container">
-        <div className="detail">
-          <img className="detail__img" src={data.pictureUrl} alt="" />
-          <div className="content">
+        <div className="detalle">
+          <img className="detalleImagen" src={data.pictureUrl} alt="" />
+          <div className="detalleProducto">
             <h1>{data.title}</h1>
             <p>{data.descripcion}</p>
             <div className="itemPrice">

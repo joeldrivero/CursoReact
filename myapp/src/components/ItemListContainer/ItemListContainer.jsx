@@ -7,6 +7,10 @@ import { productList } from "../../data/data.js";
 
 
 const ItemListContainer = ({ texto }) => {
+
+
+
+  //OBTENGO SET DE DATOS DE MI PRODUCTLIST
   const [data, setData] = useState([]);
   const { categoriaId } = useParams();
   useEffect(() => {
@@ -14,7 +18,8 @@ const ItemListContainer = ({ texto }) => {
       setTimeout(() => {
         resolve(productList);
       }, 1000);
-    });
+    });                                         
+
     if (categoriaId) {
       getData.then((res) =>
         setData(res.filter((prod) => prod.categoria === categoriaId))

@@ -1,39 +1,47 @@
 .container {
- 
     width: 60%;
-    background-color: grey ;
-    margin: auto;
+    background-color: rgb(38, 38, 38);
+    box-shadow: 3px 3px 20px rgb(75, 75, 75);
     display: flex;
+    margin: auto;
     flex-direction: column;
     margin-top: 50px;
     border-radius: 40px;
 }
 
-.detail{
+.detalle {
     margin-top: 3rem;
     margin-bottom: 3rem;
     width: 100%;
     display: flex;
 }
 
-.container img{
+.container img {
     width: 30%;
     border-radius: 16px;
-    margin-right: 20px;
+    margin-left: 20px;
     height: 80%;
 }
 
-.productImage{
-    margin-left: 20px;
-    width: 50%;
-}
-
-.content{
-    width: 100%;
-    color: aliceblue;
-}
-
-.count-cont{
+.detalleProducto {
     display: flex;
+    flex-direction: column;
+    width: 50%;
     justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 30px;
 }
+
+/* .detalleProducto h1 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.detalleProducto p {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content:end;
+
+} */

@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    background-color: rgb(47, 47, 47);
+}
+
+
+.title h1{
+    color: white;
+}
+
+.main h2{
+    color: white;
+}

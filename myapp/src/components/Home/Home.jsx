@@ -4,13 +4,17 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
+    <div className="home">
+
+ 
       <div className="title">
-        <h1>Bar</h1>
+        <h1>Bar ESCABIADORES</h1>
       </div>
       <div className="main">
         <h2>
-          loremvihujdasbviasdnivsd
+          Proximamente...
         </h2>
+      </div>
       </div>
     </>
   );
