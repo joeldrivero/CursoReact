@@ -1,0 +1,39 @@
+.container {
+ 
+    width: 60%;
+    background-color: grey ;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border-radius: 40px;
+}
+
+.detail{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+}
+
+.container img{
+    width: 30%;
+    border-radius: 16px;
+    margin-right: 20px;
+    height: 80%;
+}
+
+.productImage{
+    margin-left: 20px;
+    width: 50%;
+}
+
+.content{
+    width: 100%;
+    color: aliceblue;
+}
+
+.count-cont{
+    display: flex;
+    justify-content: center;
+}
