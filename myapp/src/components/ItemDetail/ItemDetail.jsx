@@ -9,10 +9,10 @@ const ItemDetail = ({ data }) => {
     <>
       <div className="container">
         <div className="detalle">
-          <img className="detalleImagen" src={data.pictureUrl} alt="" />
+          <img className="detalleImagen" src={data.picture} alt="" />
           <div className="detalleProducto">
             <h1>{data.title}</h1>
-            <p>{data.descripcion}</p>
+            <p>{data.description}</p>
             <div className="itemPrice">
               <h2>$ {data.price}</h2>
             </div>

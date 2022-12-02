@@ -1,29 +1,46 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { productList } from "../../data/data.js";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  getDoc,
+} from "firebase/firestore";
 
+const ItemDetailContainer = () => {
+  const getProduct = () => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res(data);
+      }, 1000);
+    });
+  };
 
-const ItemDetailContainer = ()=>{
-  const [data, setData] = useState({});
-  const {detalleId} = useParams();
+  const { detalleId } = useParams();
+  const [data, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  useEffect(()=>{
-      const getData = new Promise (resolve =>{
-          setTimeout(() => {
-              resolve(productList)
-          }, 1000);
+  useEffect(() => {
+    if (detalleId) {
+      const db = getFirestore();
+      console.log(detalleId);
+      const q = query(collection(db, "items"), where("id", "==", 1));
+      getDocs(q).then((snapshot) => {
+        setProduct({ ...snapshot.data(), id: snapshot.id });
       });
-      getData.then(res =>setData(res.find(prod => prod.id === parseInt(detalleId))));
+    }
+    console(data);
+  }, [detalleId]);
 
-
-  }, [detalleId])
-
-  return(
-      <>
-      <ItemDetail data = {data}/>
-      </>
+  return (
+    <>
+      <ItemDetail data={data} />
+    </>
   );
-}
+};
 
 export default ItemDetailContainer;

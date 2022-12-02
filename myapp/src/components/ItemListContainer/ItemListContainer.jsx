@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList.jsx";
 import { useParams } from "react-router-dom";
+
 import "./ItemListContainer.css";
 import {
   getFirestore,
@@ -31,7 +32,7 @@ const ItemListContainer = ({ texto }) => {
       });
     } else {
       const db = getFirestore();
-      const itemCollection=collection(db,"items")
+      const itemCollection = collection(db, "items");
       getDocs(itemCollection).then((snapshot) => {
         setProducts(
           snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
@@ -44,6 +45,7 @@ const ItemListContainer = ({ texto }) => {
     <>
       <div className="card-cont">
         <ItemList data={data} />
+        
       </div>
     </>
   );
