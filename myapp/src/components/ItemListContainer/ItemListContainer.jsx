@@ -1,33 +1,44 @@
-import React, {useEffect, useState} from "react";  
+import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList.jsx";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
-import { productList } from "../../data/data.js";
-
-
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
 
 const ItemListContainer = ({ texto }) => {
+  const { categoryId } = useParams();
+  const [data, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-
-
-  //OBTENGO SET DE DATOS DE MI PRODUCTLIST
-  const [data, setData] = useState([]);
-  const { categoriaId } = useParams();
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productList);
-      }, 1000);
-    });                                         
-
-    if (categoriaId) {
-      getData.then((res) =>
-        setData(res.filter((prod) => prod.categoria === categoriaId))
+    if (categoryId) {
+      const db = getFirestore();
+      console.log(categoryId);
+      const q = query(
+        collection(db, "items"),
+        where("category", "==", categoryId)
       );
+      getDocs(q).then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      });
     } else {
-      getData.then((res) => setData(res));
+      const db = getFirestore();
+      const itemCollection=collection(db,"items")
+      getDocs(itemCollection).then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      });
     }
-  }, [categoriaId]);
+  }, [categoryId]);
 
   return (
     <>
