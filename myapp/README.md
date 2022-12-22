@@ -25,13 +25,19 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Pre-requisitios
 
--[Visual Studio Code]()
--[Node.js > 16]() y npm (Recomentacion usar [nvm]())
+- [Visual Studio Code]()
+
+-   [Node.js > 16]() y npm (Recomentacion usar [nvm]())
 
 ## Estructura de Carpetas
 
--`src`: Es la carpeta contenedora de todo nuestro codigo dentro de React y contiene todas las funcionalidades.
-    -`components`: Esta carpeta contiene todos los componentes de nuestra aplicaciones
-    -`context`: Esta carpeta contiene el context del Cart.
-    -`firebase`: Esta carpeta contiene la configuracion de firebase.
--`App.jsx`: Es el componente donde inicia toda la aplicacion.
+-   `src`: Es la carpeta contenedora de todo nuestro codigo dentro de React y contiene todas las funcionalidades.
+
+    -   `components`: Esta carpeta contiene todos los componentes de nuestra aplicaciones
+    
+    -   `context`: Esta carpeta contiene el context del Cart.
+    
+    -   `firebase`: Esta carpeta contiene la configuracion de firebase.
+    
+-   `App.jsx`: Es el componente donde inicia toda la aplicacion.
+
