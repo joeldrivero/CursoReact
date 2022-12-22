@@ -25,9 +25,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Pre-requisitios
 
-- [Visual Studio Code]()
+- [Visual Studio Code](https://code.visualstudio.com)
 
--   [Node.js > 16]() y npm (Recomentacion usar [nvm]())
+-   [Node.js > 16](https://nodejs.org/en/) y npm (Recomentacion usar [nvm](https://github.com/nvm-sh/nvm))
 
 ## Estructura de Carpetas
 
@@ -40,4 +40,12 @@ It correctly bundles React in production mode and optimizes the build for the be
     -   `firebase`: Esta carpeta contiene la configuracion de firebase.
     
 -   `App.jsx`: Es el componente donde inicia toda la aplicacion.
+
+
+## Video
+
+-   [Video demostracion de la navegabilidad de la app](https://youtu.be/Wutep1oF3PU)
+
+
+
 
