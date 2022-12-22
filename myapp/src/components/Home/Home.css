@@ -1,4 +1,4 @@
-.home{
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,11 +7,20 @@
     background-color: rgb(47, 47, 47);
 }
 
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-.title h1{
+button {
+    margin-bottom: 12px;
+}
+
+.title h1 {
     color: white;
 }
 
-.main h2{
+.main h2 {
     color: white;
 }

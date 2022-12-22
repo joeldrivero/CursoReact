@@ -1,10 +1,16 @@
 import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/cartContext";
 
 const ItemDetail = ({ data }) => {
-  const onAdd =(cant)=>{
-    alert(`Agregaste ${cant} unidades`)}
+  const { addItem } = useCartContext();
+
+  const onAdd = (count) => {
+    addItem(data, count);
+    alert(`Agregaste ${count} unidades`);
+  };
+
   return (
     <>
       <div className="container">

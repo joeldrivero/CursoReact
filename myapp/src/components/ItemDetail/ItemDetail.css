@@ -10,38 +10,25 @@
 }
 
 .detalle {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 20px;
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 .container img {
     width: 30%;
     border-radius: 16px;
-    margin-left: 20px;
     height: 80%;
 }
 
 .detalleProducto {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 55%;
     justify-content: center;
     align-items: center;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 30px;
 }
-
-/* .detalleProducto h1 {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.detalleProducto p {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    justify-content:end;
-
-} */

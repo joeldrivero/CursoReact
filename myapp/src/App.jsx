@@ -11,8 +11,10 @@ import {
   getDocs,
   getFirestore,
 } from "firebase/firestore";
-
+import CartProvider from "./context/cartContext.js";
 import "./styles/App.css";
+import Cart from "./components/Cart/Cart.jsx";
+import Checkout from "./components/Checkout/Checkout.jsx";
 
 function App() {
   const [data, setData] = useState(null);
@@ -32,21 +34,26 @@ function App() {
   console.log("item", data);
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/categoria/:categoryId"
-            element={<ItemListContainer />}
-          />
-          <Route
-            path="/products/:detalleId"
-            element={<ItemDetailContainer />}
-          />
-          <Route path="/all" element={<ItemListContainer />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/categoria/:categoryId"
+              element={<ItemListContainer />}
+            />
+            <Route
+              path="/products/:detalleId"
+              element={<ItemDetailContainer />}
+            />
+            <Route path="/all" element={<ItemListContainer />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Checkout" element={<Checkout />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }

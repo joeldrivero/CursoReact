@@ -1,0 +1,10 @@
+.contador{
+    display: flex;
+    justify-content: center;
+}
+
+.agregarItem{
+    margin: 12px;
+    display: flex;
+    justify-content: center;
+}

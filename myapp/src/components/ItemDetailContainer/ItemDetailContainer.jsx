@@ -3,6 +3,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import {
   getFirestore,
+  doc,
   collection,
   query,
   where,
@@ -11,14 +12,6 @@ import {
 } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const getProduct = () => {
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(data);
-      }, 1000);
-    });
-  };
-
   const { detalleId } = useParams();
   const [data, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,12 +21,12 @@ const ItemDetailContainer = () => {
     if (detalleId) {
       const db = getFirestore();
       console.log(detalleId);
-      const q = query(collection(db, "items"), where("id", "==", 1));
-      getDocs(q).then((snapshot) => {
-        setProduct({ ...snapshot.data(), id: snapshot.id });
+      const item = doc(db, "items", detalleId);
+      getDoc(item).then((snapshot) => {
+        setProduct({ id: snapshot.id, ...snapshot.data() });
       });
+      console.log(data);
     }
-    console(data);
   }, [detalleId]);
 
   return (
